@@ -1,16 +1,42 @@
-# React + Vite
+# Ali Armani — Portfolio (React Rewrite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚧 **Status: Work in Progress** 🚧
 
-Currently, two official plugins are available:
+This repository contains a full rebuild of my personal developer portfolio using **React, Vite, and Tailwind CSS**. It is not yet complete and is not the live version of my portfolio.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Current Live Portfolio
 
-## React Compiler
+While this rewrite is in progress, my current portfolio remains live here:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌐 Live site: [ali-armani.github.io](https://ali-armani.github.io)
+- 📦 Repository: [github.com/Ali-Armani/Ali-Armani.github.io](https://github.com/Ali-Armani/Ali-Armani.github.io)
 
-## Expanding the ESLint configuration
+## About This Rewrite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This new version is being built from scratch with a modern stack to better demonstrate my front-end skills, including:
+
+- Component-based architecture with React
+- Utility-first styling with Tailwind CSS
+- Bilingual UI (English / German)
+- Dark / light theme toggle
+- A dedicated Blog section
+- Responsive, accessible, and performance-focused design
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- React Router
+
+## Deployment (Planned)
+
+Once complete, this project will be deployed via Vercel:
+
+- 🌐 Upcoming live site: [aliarmani.vercel.app](https://aliarmani.vercel.app)
+
+This README will be updated with setup instructions, screenshots, and a feature list once the project reaches a stable, deployable state.
+
+## Status Notes
+
+This project is under active development. Expect frequent changes, incomplete sections, and refactors as the architecture solidifies.
