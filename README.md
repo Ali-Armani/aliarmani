@@ -40,3 +40,12 @@ This README will be updated with setup instructions, screenshots, and a feature 
 ## Status Notes
 
 This project is under active development. Expect frequent changes, incomplete sections, and refactors as the architecture solidifies.
+
+## License
+
+© 2026 Ali Armani. All rights reserved.
+
+This code is provided for portfolio and demonstration purposes only.
+It may not be copied, modified, or redistributed — in whole or in
+part, with or without attribution — without explicit written
+permission from the author.
