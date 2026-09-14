@@ -21,6 +21,7 @@ function Header() {
       <Link to="/">Ali Armani</Link>
 
       <nav>
+        <h1 className="text-3xl font-bold text-blue-500">Tailwind Test</h1>
         <a href="#about" onClick={(e) => handleAnchorClick(e, 'about')}>About</a>
         <a href="#projects" onClick={(e) => handleAnchorClick(e, 'projects')}>Projects</a>
         <a href="#certificates" onClick={(e) => handleAnchorClick(e, 'certificates')}>Skills</a>
