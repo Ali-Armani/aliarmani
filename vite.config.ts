@@ -1,7 +1,20 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import tsConfigPaths from "vite-tsconfig-paths";
+import { nitro } from "nitro/vite";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default defineConfig(({ command }) => ({
+  plugins: [
+    tsConfigPaths(),
+    tanstackStart(),
+    viteReact(),
+    tailwindcss(),
+    // Nitro is only needed for production builds.
+    command === "build" ? nitro({ preset: "cloudflare_module" }) : null,
+  ],
+  resolve: {
+    dedupe: ["react", "react-dom"],
+  },
+}));
