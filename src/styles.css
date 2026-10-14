@@ -1,2 +1,107 @@
 @import "tailwindcss" source(none);
 @source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-signal: var(--signal);
+  --color-primary-soft: var(--primary-soft);
+}
+
+:root {
+  --radius: 0.375rem;
+  --paper: oklch(0.975 0.008 85);
+  --ink: oklch(0.2 0.01 260);
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(0.99 0.005 85);
+  --card-foreground: var(--ink);
+  --popover: var(--card);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.5 0.22 262);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.01 85);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.94 0.01 85);
+  --muted-foreground: oklch(0.47 0.012 260);
+  --accent: oklch(0.93 0.04 262);
+  --accent-foreground: oklch(0.38 0.18 262);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.01 85);
+  --input: oklch(0.88 0.01 85);
+  --ring: oklch(0.5 0.22 262);
+  --signal: oklch(0.62 0.15 150);
+  --primary-soft: oklch(0.72 0.15 262);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(color-mix(in oklab, var(--ink) 7%, transparent) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.03em; }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 2px; }
+  [lang="fa"] { font-family: "Vazirmatn", var(--font-sans); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+}
+
+@utility container-page { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+@utility text-hero { font-size: clamp(2.4rem, 6vw, 4.75rem); line-height: 1.02; font-weight: 600; }
+@utility text-section { font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.05; font-weight: 600; }
+@utility label-mono { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+@utility rule-top { border-top: 1px solid var(--color-foreground); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@utility animate-rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@utility text-name { font-family: var(--font-display); font-weight: 600; font-size: clamp(5.5rem, 22vw, 15rem); line-height: 0.82; letter-spacing: -0.06em; }
+@utility text-mega { font-family: var(--font-display); font-weight: 600; font-size: clamp(3.2rem, 10vw, 8.5rem); line-height: 0.9; letter-spacing: -0.05em; }
+@utility section-ink { background-color: var(--ink); color: var(--paper); }
+@utility frame-browser { background: var(--card); color: var(--ink); border: 1px solid color-mix(in oklab, var(--ink) 25%, transparent); box-shadow: 0 40px 80px -40px color-mix(in oklab, black 60%, transparent); }
+@utility frame-phone { border: 8px solid var(--ink); border-radius: 2rem; overflow: hidden; background: var(--ink); box-shadow: 0 30px 60px -30px color-mix(in oklab, var(--ink) 60%, transparent); }
+@utility dot { display: block; width: 0.55rem; height: 0.55rem; border-radius: 9999px; background: color-mix(in oklab, var(--ink) 25%, transparent); }
+@utility tilt-left { transform: rotate(-1.2deg); transition: transform 0.5s ease; &:hover { transform: rotate(0deg) translateY(-4px); } }
+@utility tilt-right { transform: rotate(1.5deg); transition: transform 0.5s ease; &:hover { transform: rotate(0deg) translateY(-4px); } }
+@utility ghost-num { position: absolute; inset-inline-end: 0; top: -4.5rem; font-family: var(--font-display); font-weight: 600; font-size: clamp(7rem, 16vw, 13rem); line-height: 1; letter-spacing: -0.06em; color: transparent; -webkit-text-stroke: 1px color-mix(in oklab, var(--ink) 25%, transparent); pointer-events: none; }
+@utility btn-signal { display: inline-block; background: var(--primary); color: var(--primary-foreground); padding: 0.8rem 1.25rem; font-weight: 500; transition: background 0.2s, transform 0.2s; &:hover { background: var(--ink); transform: translateY(-2px); } }
+@utility btn-outline { display: inline-block; border: 1px solid var(--ink); padding: 0.8rem 1.25rem; font-weight: 500; transition: background 0.2s, color 0.2s; &:hover { background: var(--ink); color: var(--paper); } }
+@utility btn-ghost-light { display: inline-block; border: 1px solid color-mix(in oklab, var(--paper) 40%, transparent); padding: 0.8rem 1.25rem; font-weight: 500; &:hover { border-color: var(--paper); } }
+
+.reveal { transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.reveal[data-reveal="hidden"] { opacity: 0; transform: translateY(28px); }
