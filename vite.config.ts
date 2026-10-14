@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => ({
     viteReact(),
     tailwindcss(),
     // Nitro is only needed for production builds.
-    command === "build" ? nitro({ preset: "cloudflare_module" }) : null,
+    command === "build" ? nitro() : null,
   ],
   resolve: {
     dedupe: ["react", "react-dom"],
