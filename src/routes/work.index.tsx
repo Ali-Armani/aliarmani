@@ -4,7 +4,7 @@ import { ProjectIndex } from "@/components/site/ProjectIndex";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/work/")({
-  head: () => seo("Work — Ali Armnai", "Selected projects by Ali Armani: the 4Kids full-stack e-commerce platform, Weather Forecast, Vocab Bridge, TaskFlow and more.", "/work"),
+  head: () => seo("Work — Ali Armani", "Selected projects by Ali Armani: the 4Kids full-stack e-commerce platform, Weather Forecast, Vocab Bridge, TaskFlow and more.", "/work"),
   component: Work,
 });
 
