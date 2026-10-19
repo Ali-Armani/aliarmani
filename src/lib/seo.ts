@@ -1,4 +1,9 @@
-export const seo = (title: string, description: string, path: string, type = "website") => ({
+export const seo = (
+  title: string,
+  description: string,
+  path: string,
+  type = "website",
+) => ({
   meta: [
     { title },
     { name: "description", content: description },
