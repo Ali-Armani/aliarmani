@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useI18n } from "@/i18n/i18n";
 import {
   aboutParagraphs,
@@ -21,6 +21,13 @@ export const Route = createFileRoute("/resume")({
   component: Resume,
 });
 
+const Row = ({ title, children }: { title: string; children: ReactNode }) => (
+  <section className="grid gap-4 border-b py-8 md:grid-cols-12">
+    <h2 className="label-mono md:col-span-3">{title}</h2>
+    <div className="md:col-span-9">{children}</div>
+  </section>
+);
+
 function Resume() {
   const { t, l } = useI18n();
   const [pdf, setPdf] = useState<"checking" | "ok" | "missing">("checking");
@@ -35,19 +42,6 @@ function Resume() {
       )
       .catch(() => setPdf("missing"));
   }, []);
-
-  const Row = ({
-    title,
-    children,
-  }: {
-    title: string;
-    children: React.ReactNode;
-  }) => (
-    <section className="grid gap-4 border-b py-8 md:grid-cols-12">
-      <h2 className="label-mono md:col-span-3">{title}</h2>
-      <div className="md:col-span-9">{children}</div>
-    </section>
-  );
 
   return (
     <div className="container-page pt-16">
