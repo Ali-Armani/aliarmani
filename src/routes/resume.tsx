@@ -91,9 +91,7 @@ function Resume() {
         </ul>
       </Row>
       <Row title={t.resume.tech}>
-        <p className="whitespace-nowrap">
-          {skillsUsed.map((s) => s.name).join(" · ")}
-        </p>
+        <p>{skillsUsed.map((s) => s.name).join(" · ")}</p>
       </Row>
       <Row title={t.resume.certs}>
         <p>{certificates.map((c) => c.title).join(" · ")}</p>
